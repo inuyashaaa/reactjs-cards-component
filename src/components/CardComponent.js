@@ -2,12 +2,12 @@ import React from 'react';
 import NavigationComponent from './NavigationComponent.js';
 
 export default class CardComponent extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+  }
   render() {
     return(
-      <div className={"card " + this.props.cardStyle} style={{width: '40rem'}}>
+      <div className={"card " + this.props.cardStyle} style={{width: '25rem'}}>
         {
           this.props.cardHeader && this.props.cardHeader.map(
             (header, index) => (
@@ -42,7 +42,7 @@ export default class CardComponent extends React.Component {
           }
           {
             this.props.cardLink && this.props.cardLink.map(
-              (link, index) => (<a key={index} href={link} className="btn btn-primary">{this.props.linkTitle[index]}</a>)
+              (link, index) => (<a key={index} href={link} className={this.props.cardLinkStyle[index]}>{this.props.linkTitle[index]}</a>)
             )
           }
         </div>
@@ -68,4 +68,8 @@ export default class CardComponent extends React.Component {
       </div>
     );
   }
+}
+
+CardComponent.defaultProps = {
+  cardLinkStyle: ['btn btn-primary']
 }
