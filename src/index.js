@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CardComponent from './components/CardComponent.js';
 import './styles/card.css';
+import './index.css';
 
 const CardInput = {
   cardHeader: ["Card Header"],
@@ -11,14 +12,13 @@ const CardInput = {
   cardTitle: ["Card title"],
   cardSubTitle: ["Card subtitle"],
   cardText: ["Some quick example text to build on the card title."],
-  cardLink: ["https://www.google.com.vn"],
-  linkTitle: ["Go to Google"],
+  cardLink: ["https://www.google.com.vn", "https://www.github.com"],
+  linkTitle: ["Card Link", "Another Link"],
   listItem: ["Inuyashaa", "Kagome", "Nakaru"],
   cardFooter: ["Card Footer"],
 }
 ReactDOM.render(
   <CardComponent
-    cardStyle="border-primary"
     cardHeader={CardInput.cardHeader}
     navCard={true}
     imageTopSrc={CardInput.imageTopLink}
@@ -28,10 +28,7 @@ ReactDOM.render(
     cardText={CardInput.cardText}
     cardLink={CardInput.cardLink}
     linkTitle={CardInput.linkTitle}
-    listItem={CardInput.listItem}
-    imageBottomSrc={CardInput.imageBottomLink}
     cardFooter={CardInput.cardFooter}
-    imageOverlay={true}
   />,
   document.getElementById('root')
 )
